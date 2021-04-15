@@ -1,3 +1,4 @@
+#ifndef PRODUTO_H_INCLUDED
 #define PRODUTO_H_INCLUDED
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,3 +24,4 @@ Produto novo_produto()
     p.quantidade = 10;
     return p;
 }
+#endif // PRODUTO_H_INCLUDED

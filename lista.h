@@ -23,7 +23,7 @@ Celula *newCelula()
     return tmp;
 }
 
-void create_lista(Lista *l)
+void newLista(Lista *l)
 {
     Celula *tmp = newCelula();
 
@@ -43,6 +43,17 @@ bool add_lista_end(Lista *l, Produto p)
     l->tam++;
 
     return true;
+}
+
+void print_lista(Lista *l)
+{
+    Celula *tmp = l->inicio->prox;
+
+    while (tmp != NULL)
+    {
+        print_produto(tmp->dado);
+        tmp = tmp->prox;
+    }
 }
 
 #endif // FILA_H_INCLUDED
