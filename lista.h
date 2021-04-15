@@ -32,7 +32,23 @@ void newLista(Lista *l)
     l->tam = 0;
 }
 
-bool add_lista_end(Lista *l, Produto p)
+void add_lista(Lista *l, Produto p) {
+  Celula *temp = (Celula*)malloc(sizeof(Celula));
+  temp->dado = p;
+
+  if(l->inicio == NULL) {
+    temp->prox = NULL;
+    l->inicio = temp;
+    l->fim = temp;
+  } else {
+    temp->prox = l->inicio;
+    l->inicio = temp;
+  }
+
+  l->tam++;
+}
+
+void add_lista_end(Lista *l, Produto p)
 {
     Celula *nova = newCelula();
 
@@ -41,8 +57,6 @@ bool add_lista_end(Lista *l, Produto p)
     l->fim->prox = nova;
     l->fim = nova;
     l->tam++;
-
-    return true;
 }
 
 void print_lista(Lista *l)
