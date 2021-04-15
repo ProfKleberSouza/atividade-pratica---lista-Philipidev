@@ -16,15 +16,33 @@ typedef struct Lista
     int tam;
 } Lista;
 
-void create_lista(Lista *l)
+Celula *newCelula()
 {
-
     Celula *tmp = (Celula *)malloc(sizeof(Celula));
     tmp->prox = NULL;
+    return tmp;
+}
+
+void create_lista(Lista *l)
+{
+    Celula *tmp = newCelula();
 
     l->inicio = tmp;
     l->fim = tmp;
     l->tam = 0;
+}
+
+bool add_lista_end(Lista *l, Produto p)
+{
+    Celula *nova = newCelula();
+
+    nova->dado = p;
+
+    l->fim->prox = nova;
+    l->fim = nova;
+    l->tam++;
+
+    return true;
 }
 
 #endif // FILA_H_INCLUDED
