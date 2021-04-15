@@ -59,6 +59,11 @@ void add_lista_end(Lista *l, Produto p)
     l->tam++;
 }
 
+int tamnhoLista(Lista *l)
+{
+    return l->tam;
+}
+
 void print_lista(Lista *l)
 {
     Celula *tmp = l->inicio->prox;
