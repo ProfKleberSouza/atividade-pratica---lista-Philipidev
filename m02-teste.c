@@ -7,7 +7,8 @@ int main(){
   Lista estoque;
 
   newLista(&estoque);
-  add_lista_end(&estoque, novo_produto());
+  Produto p = novo_produto();
+  add_lista_end(&estoque, p);
   
-  assert(estoque.tam == 1);
+  assert(estoque.fim->dado.valor == p.valor);
 }
